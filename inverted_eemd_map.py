@@ -55,11 +55,11 @@ def eemd_decomposition(cube, num_processor=1):
     process.close()
     process.join()
 
-    IMFs = []
+    list_IMFs = []
     for i in range(num_processor):
-        IMFs += IMFs_lists[i]
+        list_IMFs += IMFs_lists[i]
 
-    return IMFs
+    return list_IMFs
 
 
 
