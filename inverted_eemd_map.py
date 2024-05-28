@@ -71,7 +71,7 @@ def reconstruct_inverted_cube(list_IMFs, cube_shape, imfn=0, n_imf_min=4):
     list_IMFs: List of intrinsic mode functions (IMFs)
     cube_shape: the shape of the 3D data cube to be reconstructed, the shape must be the same as the data shape of decomposition
     imfn: the order of IMFs of a signal that we are interested in, e.g., imfn=0 for IMF0, imfn=1 for IMF1, etc.
-    n_imf_min: if the number of IMFs of a signal is less than a certain value, n_imf_min will limit the use of this channel to ensure that the interested IMF has minimal differences in physical features from other channel
+    n_imf_min: If the number of IMFs obtained from decomposing a signal is less than the value determined by n_imf_min, the reconstructed data at the location of the signal is replaced by 0
     Return:
     A 3D data cube
     '''
@@ -126,38 +126,3 @@ if __name__ == "__main__":
 
     hdu[0].data = recons_cube
     hdu.writeto(file + '_invertedIMF' + '.fits', overwrite=True)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
